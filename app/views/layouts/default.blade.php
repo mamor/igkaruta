@@ -9,6 +9,7 @@
 @include('include.navbar')
 <div class="container">
 	@yield('content')
+	@include('include.footer')
 </div>
 </body>
 </html>

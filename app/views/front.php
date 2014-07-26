@@ -22,6 +22,7 @@
 <?php echo View::make('include.navbar'); ?>
 <div class="container">
 	<div ng-view></div>
+	<?php echo View::make('include.footer'); ?>
 </div>
 </body>
 </html>
