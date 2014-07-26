@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja" ng-app="MyApp">
+<html lang="en" ng-app="MyApp">
 <head>
 	<meta charset="UTF-8">
 	<title>KARUTA</title>
