@@ -1,6 +1,20 @@
 // Karma configuration
 // Generated on Tue May 20 2014 19:52:26 GMT+0900 (JST)
 
+var browsers;
+
+switch (require('os').platform()) {
+  case 'darwin':
+    browsers = ['PhantomJS', 'Chrome', 'Firefox', 'Safari'];
+    break;
+  case 'linux':
+    browsers = ['PhantomJS'];
+    break;
+  default:
+    ['IE']; // Windows
+    break;
+}
+
 module.exports = function(config) {
   config.set({
 
@@ -57,7 +71,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS', 'Chrome', 'Firefox', require('os').platform() === 'darwin' ? 'Safari' : 'IE'],
+    browsers: browsers,
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
