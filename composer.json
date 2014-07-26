@@ -5,12 +5,12 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
+		"barryvdh/laravel-ide-helper": "1.*",
+		"barryvdh/laravel-debugbar": "1.*",
 		"vlucas/phpdotenv": "1.*"
 	},
 	"require-dev": {
-		"barryvdh/laravel-ide-helper": "1.*",
-		"mockery/mockery": "0.*",
-		"barryvdh/laravel-debugbar": "1.*"
+		"mockery/mockery": "0.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -27,6 +27,7 @@
 	},
 	"scripts": {
 		"post-install-cmd": [
+			"chmod +x heroku.sh && ./heroku.sh",
 			"php artisan clear-compiled",
 			"php artisan optimize"
 		],

@@ -7,7 +7,7 @@
 */
 
 Dotenv::load(__DIR__.'/../app/config');
-Dotenv::required(['LARAVEL_ENV', 'INSTAGRAM_CLIENT_ID', 'INSTAGRAM_CLIENT_SECRET']);
+Dotenv::required(['LARAVEL_ENV', 'LARAVEL_KEY', 'INSTAGRAM_CLIENT_ID', 'INSTAGRAM_CLIENT_SECRET']);
 
 /*
 |--------------------------------------------------------------------------
