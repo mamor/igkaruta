@@ -1,0 +1,20 @@
+<p ng-show="loading.users">Loading data. Please wait...</p>
+
+<form ng-show="users" class="form-inline">
+	<select class="form-control" ng-model="userId">
+		<option ng-repeat="user in users" value="{{ user.id }}">@{{ user.username }} - {{ user.full_name }}</option>
+	</select>
+	<button ng-disabled="! gameOver && playing" ng-click="getPhotos()" class="btn btn-default">GET PHOTOS</button>
+	<button ng-disabled="gameOver || ! photos || playing" ng-click="start()" class="btn btn-default">START</button>
+	<button ng-disabled="gameOver || ! photos || ! playing" ng-click="stop()" class="btn btn-default">STOP</button>
+	<span ng-show="photos">Win:{{ counter.win }} Lose:{{counter.lose}} Time:{{ time }} sec.</span>
+</form>
+
+<div ng-show="loading.photos"><img class="loading" src="/assets/img/loading.gif" /></div>
+
+<div ng-show="photos">
+	<p ng-show="gameOver">Game Over...</p>
+	<p ng-show="! gameOver">Caption: <span my-fade-in-chars="{{ text }}"></span></p>
+	<img class="photos" ng-class="{'clickable': (playing && photo.id), 'non-clickable': ! playing || ! photo.id}"
+		 ng-click="answer(photo.id)" ng-repeat="photo in photos" ng-src="{{ photo.images.thumbnail.url }}" />
+</div>

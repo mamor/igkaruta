@@ -1,0 +1,11 @@
+<div class="modal-header">
+	<h1 ng-show="actual === expect">You win!!</h1>
+	<h1 ng-show="actual !== expect">You lose...</h1>
+	<p>- {{ expect.caption.text }} -</p>
+</div>
+<div class="modal-body">
+	<div class="row">
+        <div class="col-md-6">Your<br /><img ng-src="{{ actual.images.thumbnail.url }}" /></div>
+		<div class="col-md-6">Expect<br /><img ng-src="{{ expect.images.thumbnail.url }}" /></div>
+	</div>
+</div>

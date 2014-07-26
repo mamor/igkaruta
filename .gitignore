@@ -1,0 +1,16 @@
+/bootstrap/compiled.php
+/vendor
+composer.phar
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+
+/public/packages
+/_ide_helper.php
+
+/.idea
+
+/bower_components
+/node_modules
+/app/config/.env

@@ -1,0 +1,17 @@
+{
+	"name": "KARUTA",
+	"version": "0.1.0",
+	"devDependencies": {
+		"gulp": "~3.*",
+		"gulp-util": "~2.*",
+		"gulp-jshint": "~1.*",
+		"gulp-recess": "~0.*",
+		"gulp-karma": "~0.*",
+		"karma-jasmine": "~0.*",
+		"karma-phantomjs-launcher": "~0.*",
+		"karma-chrome-launcher": "~0.*",
+		"karma-firefox-launcher": "~0.*",
+		"karma-safari-launcher": "~0.*",
+		"karma-ie-launcher": "~0.*"
+	}
+}

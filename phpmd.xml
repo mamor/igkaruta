@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+    <rule ref="rulesets/cleancode.xml">
+        <exclude name="StaticAccess" />
+    </rule>
+
+    <rule ref="rulesets/codesize.xml">
+    </rule>
+
+    <rule ref="rulesets/controversial.xml">
+    </rule>
+
+    <rule ref="rulesets/design.xml">
+    </rule>
+
+    <rule ref="rulesets/naming.xml">
+        <exclude name="ShortVariable" />
+    </rule>
+
+    <rule ref="rulesets/unusedcode.xml">
+    </rule>
+</ruleset>
