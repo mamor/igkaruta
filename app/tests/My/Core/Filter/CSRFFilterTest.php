@@ -24,7 +24,7 @@ class CSRFFilterTest extends \TestCase
 			\Session::shouldReceive('token')->never();
 
 			try {
-				(new CsrfFilter)->filter();
+				(new CSRFFilter)->filter();
 				$this->assertTrue(true);
 			} catch (TokenMismatchException $e) {
 				$this->fail();
@@ -49,7 +49,7 @@ class CSRFFilterTest extends \TestCase
 			\Session::shouldReceive('token')->once()->andReturn('x');
 
 			try {
-				(new CsrfFilter)->filter();
+				(new CSRFFilter)->filter();
 				$this->assertTrue(true);
 			} catch (TokenMismatchException $e) {
 				$this->fail();
@@ -74,7 +74,7 @@ class CSRFFilterTest extends \TestCase
 			\Session::shouldReceive('token')->once()->andReturn('x');
 
 			try {
-				(new CsrfFilter)->filter();
+				(new CSRFFilter)->filter();
 				$this->fail();
 			} catch (TokenMismatchException $e) {
 				$this->assertTrue(true);
