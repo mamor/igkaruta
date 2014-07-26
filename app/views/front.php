@@ -2,7 +2,7 @@
 <html lang="en" ng-app="MyApp">
 <head>
 	<meta charset="UTF-8">
-	<title>KARUTA</title>
+	<title>KARUTA for Instagram</title>
 	<?php echo View::make('include.assets'); ?>
 	<!-- AngularJS -->
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>

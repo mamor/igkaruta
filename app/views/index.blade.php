@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'KARUTA')
+@section('title', 'KARUTA for Instagram')
 
 @section('content')
 @if (! is_array(\Session::get('accessToken')))
