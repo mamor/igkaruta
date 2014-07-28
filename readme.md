@@ -1,4 +1,7 @@
-# KARUTA for Instagram [![Build Status](https://travis-ci.org/mamor/igkaruta.png)](https://travis-ci.org/mamor/igkaruta)
+# KARUTA for Instagram
+[![Build Status](https://travis-ci.org/mamor/igkaruta.png)](https://travis-ci.org/mamor/igkaruta)
+[![Coverage Status](https://coveralls.io/repos/mamor/igkaruta/badge.png?branch=master)](https://coveralls.io/r/mamor/igkaruta?branch=master)
+
 AngularJS x LaravelによるInstagramの写真を使ったカルタです。
 
 * AngularJS https://angularjs.org/

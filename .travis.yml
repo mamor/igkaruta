@@ -9,8 +9,12 @@ php:
 before_script:
   - cp app/config/.env.default app/config/.env
   - composer install
+  - composer require satooshi/php-coveralls:0.* --dev
   - if php -v | grep -q "PHP 5.6"; then npm install -g bower; npm install; bower install; fi
 
 script:
-  - phpunit
+  - phpunit --coverage-clover build/logs/clover.xml
   - if php -v | grep -q "PHP 5.6"; then gulp karma; fi
+
+after_script:
+  - php vendor/bin/coveralls
