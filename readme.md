@@ -1,4 +1,4 @@
-# KARUTA
+# KARUTA for Instagram [![Build Status](https://travis-ci.org/mamor/igkaruta.png)](https://travis-ci.org/mamor/igkaruta)
 AngularJS x LaravelによるInstagramの写真を使ったカルタです。
 
 * AngularJS https://angularjs.org/
@@ -39,7 +39,7 @@ Mac OS X Mavericks で確認しています。
 ### プロファイラの設定
 次のコマンドを実行します。
 
-    $ debugbar:publish
+    $ php artisan debugbar:publish
 
 app/config/local.default/app.php を app/config/local/app.php としてコピーすると有効になります。
 
@@ -48,13 +48,13 @@ app/config/local.default/app.php を app/config/local/app.php としてコピー
 
     $ phpunit
 
-### Jasmine with Karma
+### Jasmine with gulp.js and Karma
 必要なモジュールをインストールします。npm と bower は別途インストールして下さい。
 
     $ npm install
     $ bower install
 
-次のコマンドを実行します。gulp は別途インストールして下さい。
+次のコマンドを実行します。gulp と karma は別途インストールして下さい。
 
     $ gulp karma
 
