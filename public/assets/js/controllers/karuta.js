@@ -78,7 +78,7 @@ angular.module('MyApp')
 		};
 
 		/**
-		 * 社員一覧を取得する
+		 * 写真一覧を取得する
 		 */
 		$scope.getPhotos = function () {
 			self.initializeScope();
