@@ -11,7 +11,8 @@ switch (require('os').platform()) {
     browsers = ['PhantomJS'];
     break;
   default:
-    ['IE']; // Windows
+    // Windows
+    browsers = ['PhantomJS', 'Chrome', 'Firefox', 'IE'];
     break;
 }
 
