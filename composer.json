@@ -21,8 +21,8 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php"
 		],
-		"psr-0": {
-			"My": "app/app"
+		"psr-4": {
+			"My\\": "app/app"
 		}
 	},
 	"scripts": {
