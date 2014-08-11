@@ -1,7 +1,5 @@
 <?php namespace My\Core\Filter;
 
-use \Illuminate\Session\TokenMismatchException;
-
 /**
  * Class CSRFFilterTest
  */
@@ -10,75 +8,31 @@ class CSRFFilterTest extends \TestCase
 	/**
 	 * test for filter()
 	 *
-	 * excluded methods
-	 *
 	 * @test
 	 */
-	public function testFilterExcludedMethods()
+	public function testFilter()
 	{
-		$methods = ['GET', 'DELETE'];
+		\Session::shouldReceive('token')->once()->andReturn('xxx');
+		\Input::replace(['_token' => 'xxx']);
 
-		foreach ($methods as $method) {
-			\Input::shouldReceive('getMethod')->once()->andReturn($method);
-			\Input::shouldReceive('input')->never();
-			\Session::shouldReceive('token')->never();
+		(new CSRFFilter)->filter();
 
-			try {
-				(new CSRFFilter)->filter();
-				$this->assertTrue(true);
-			} catch (TokenMismatchException $e) {
-				$this->fail();
-			}
-		}
+		$this->assertTrue(true);
 	}
 
 	/**
 	 * test for filter()
 	 *
-	 * target methods
+	 * token mismatch
 	 *
 	 * @test
+	 * @expectedException \Illuminate\Session\TokenMismatchException
 	 */
-	public function testFilterTargetMethods()
+	public function testFilterTokenMismatch()
 	{
-		$methods = ['POST', 'PUT', 'PATCH'];
+		\Session::shouldReceive('token')->once()->andReturn('xxx');
+		\Input::replace(['_token' => 'yyy']);
 
-		foreach ($methods as $method) {
-			\Input::shouldReceive('getMethod')->once()->andReturn($method);
-			\Input::shouldReceive('input')->once()->andReturn('x');
-			\Session::shouldReceive('token')->once()->andReturn('x');
-
-			try {
-				(new CSRFFilter)->filter();
-				$this->assertTrue(true);
-			} catch (TokenMismatchException $e) {
-				$this->fail();
-			}
-		}
-	}
-
-	/**
-	 * test for filter()
-	 *
-	 * target methods - TokenMismatch
-	 *
-	 * @test
-	 */
-	public function testFilterTargetMethodsTokenMismatch()
-	{
-		$methods = ['POST', 'PUT', 'PATCH'];
-
-		foreach ($methods as $method) {
-			\Input::shouldReceive('getMethod')->once()->andReturn($method);
-			\Input::shouldReceive('input')->once()->andReturn('y');
-			\Session::shouldReceive('token')->once()->andReturn('x');
-
-			try {
-				(new CSRFFilter)->filter();
-				$this->fail();
-			} catch (TokenMismatchException $e) {
-				$this->assertTrue(true);
-			}
-		}
+		(new CSRFFilter)->filter();
 	}
 }

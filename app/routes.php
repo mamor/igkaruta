@@ -11,7 +11,9 @@
 |
 */
 
-Route::group(['before' => 'csrf', 'namespace' => 'My\App\Controller'], function () {
+Route::when('*', 'csrf', ['post', 'put', 'delete']);
+
+Route::group(['namespace' => 'My\App\Controller'], function () {
 	Route::controller('auth', 'AuthController');
 
 	Route::group(['before' => 'auth'], function () {
